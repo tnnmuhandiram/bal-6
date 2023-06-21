@@ -10,7 +10,7 @@ configurable int port = 9090;
 
 service http:Service / on new http:Listener(port) {
     resource function get greeting() returns string {
-        string message = "Hello 1";
+        string message = "Hello 2";
         io:println(int:avg(10, 20, 30, 40));
         return message;
     }

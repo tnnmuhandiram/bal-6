@@ -6,12 +6,11 @@ type Greeting record {|
     string content;
 |};
 
-configurable int port = 9090;
 
-service http:Service / on new http:Listener(port) {
+
+service http:Service / on new http:Listener() {
     resource function get greeting() returns string {
         string message = "Hello 4";
-        io:println(int:avg(10, 20, 30, 40));
         return message;
     }
 }

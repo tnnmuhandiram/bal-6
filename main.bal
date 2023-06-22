@@ -1,17 +1,20 @@
 import ballerina/http;
 import ballerina/io;
 
-type Greeting record {|
-    string to;
-    string content;
-|};
+listener http:Listener httpListener = new (8080);
 
-configurable int port = 9090;
+service / on httpListener {
+    resource function get greeting() returns string { 
 
-service http:Service / on new http:Listener(port) {
-    resource function get greeting() returns string {
-        string message = "Hello";
-        io:println(int:avg(10, 20, 30, 40));
-        return message;
+    // update 5 only feature addition
+    foreach int i in int:range(0, 5, 2) {
+        io:println(i);
+    }
+
+    // update 5 only feature addition
+    foreach int i in int:range(5, 0, -2) {
+        io:println(i);
+    }
+        return "Hello, World!"; 
     }
 }

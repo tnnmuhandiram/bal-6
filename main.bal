@@ -1,5 +1,4 @@
 import ballerina/http;
-import ballerina/io;
 
 type Greeting record {|
     string to;

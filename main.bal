@@ -3,7 +3,6 @@ import ballerina/io;
 
 listener http:Listener httpListener = new (8080);
 configurable string test = ?;
-configurable string test2 = ?;
 configurable string test4 = ?;
 
 
@@ -19,6 +18,6 @@ service / on httpListener {
     foreach int i in int:range(5, 0, -2) {
         io:println(i);
     }
-        return "Hello, World! 4 " + test + " sadfasdf "+ "--"+ test2 +"444"+test4; 
+        return "Hello, World! 4 " + test + " sadfasdf " +"444"+test4; 
     }
 }

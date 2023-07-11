@@ -2,6 +2,8 @@ import ballerina/http;
 import ballerina/io;
 
 listener http:Listener httpListener = new (8080);
+configurable string test = ?;
+
 
 service / on httpListener {
     resource function get greeting() returns string { 
@@ -15,6 +17,6 @@ service / on httpListener {
     foreach int i in int:range(5, 0, -2) {
         io:println(i);
     }
-        return "Hello, World! 4"; 
+        return "Hello, World! 4 " + test + " sadfasdf "; 
     }
 }
